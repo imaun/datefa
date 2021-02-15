@@ -17,17 +17,21 @@ namespace Datefa.Core.ViewModels {
             Days = new List<DayViewModel>();
         }
 
+        #region Properties
         public PersianMonth Month { get; set; }
         public int Year { get; set; }
         public string PersianTitle { get; set; }
-        public int MiladiMonth1_Index { get; set; }
-        public string MiladiMonth1_Title { get; set; }
-        public int MiladiMonth2_Index { get; set; }
-        public string MiladiMonth2_Title { get; set; }
-        public int HijriMonth1_Index { get; set; }
-        public string HijriMonth1_Title { get; set; }
-        public int HijriMonth2_Index { get; set; }
-        public string HijriMonth2_Title { get; set; }
+        public int MiladiMonth1 { get; set; }
+        public string MiladiMonth1Title { get; set; }
+        public int MiladiMonth2 { get; set; }
+        public string MiladiMonth2Title { get; set; }
+        public int HijriMonth1 { get; set; }
+        public string HijriMonth1Title { get; set; }
+        public int HijriMonth2 { get; set; }
+        public string HijriMonth2Title { get; set; }
         public ICollection<DayViewModel> Days { get; set; }
+        public DayViewModel FirstDayOfMonth { get; set; }
+        public int LastDayNumber { get; set; }
+        #endregion
     }
 }
