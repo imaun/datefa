@@ -7,17 +7,17 @@ namespace Datefa.Core.Extensions {
         /// <summary>
         /// Converts English digits of a given number to their equivalent Persian digits.
         /// </summary>
-        public static string ToPersianNumbers(this int number, string format = "")
+        public static string ToPersianNumbers(this int number, string format = null)
             => ToPersianNumbers(!string.IsNullOrEmpty(format)
                 ? number.ToString(format, CultureInfo.InvariantCulture)
                 : number.ToString(CultureInfo.InvariantCulture));
 
-        public static string ToArabicNumbers(this int number, string format = "")
+        public static string ToArabicNumbers(this int number, string format = null)
             => ToArabicNumbers(!string.IsNullOrEmpty(format)
                 ? number.ToString(format, CultureInfo.InvariantCulture)
                 : number.ToString(CultureInfo.InvariantCulture));
 
-        public static string ToEnglishNumbers(this int number, string format)
+        public static string ToEnglishNumbers(this int number, string format = null)
             => ToEnglishNumbers(!string.IsNullOrEmpty(format)
                 ? number.ToString(format, CultureInfo.InvariantCulture)
                 : number.ToString(CultureInfo.InvariantCulture));
