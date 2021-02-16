@@ -33,7 +33,7 @@ namespace Datefa.Core.ViewModels {
         public string MonthDisplayName => Month.GetPersianMonthDisplayName();
         public int Year { get; set; }
         public DateTime DateValue { get; set; }
-        public bool IsToday => DateTime.Now.Date == DateTime.Today;
+        public bool IsToday => DateValue.Date == DateTime.Today;
         /// <summary>
         /// If true, means It's holiday
         /// </summary>
