@@ -49,20 +49,20 @@ namespace Datefa.Core.Extensions {
                 { PersianMonth.Tir, "تیر"}
             };
 
-        private static Dictionary<MiladiMonth, string> _miladiMonthNames
-            = new Dictionary<MiladiMonth, string> {
-                { MiladiMonth.April, "April" },
-                { MiladiMonth.August, "August" },
-                { MiladiMonth.December, "December" },
-                { MiladiMonth.Feburuary, "Feburuary" },
-                { MiladiMonth.January, "January" },
-                { MiladiMonth.July, "July" },
-                { MiladiMonth.June, "June" },
-                { MiladiMonth.March, "March" },
-                { MiladiMonth.May, "May" },
-                { MiladiMonth.November, "November" },
-                { MiladiMonth.October, "October" },
-                { MiladiMonth.September, "September" }
+        private static Dictionary<GregorianMonth, string> _gregorianMonthNames
+            = new Dictionary<GregorianMonth, string> {
+                { GregorianMonth.April, "April" },
+                { GregorianMonth.August, "August" },
+                { GregorianMonth.December, "December" },
+                { GregorianMonth.Feburuary, "Feburuary" },
+                { GregorianMonth.January, "January" },
+                { GregorianMonth.July, "July" },
+                { GregorianMonth.June, "June" },
+                { GregorianMonth.March, "March" },
+                { GregorianMonth.May, "May" },
+                { GregorianMonth.November, "November" },
+                { GregorianMonth.October, "October" },
+                { GregorianMonth.September, "September" }
             };
 
         private static Dictionary<HijriMonth, string> _hijriMonthNames
@@ -80,11 +80,6 @@ namespace Datefa.Core.Extensions {
                 { HijriMonth.DualQadah, "ذوالقعده" },
                 { HijriMonth.DualHijjah, "ذوالحجه" }
             };
-        
-        //private static Dictionary<PersianMonth, MiladiMonth> _1stMonths
-        //    = new Dictionary<PersianMonth, MiladiMonth>() {
-        //        { PersianMonth.Farvardin, MiladiMonth.}
-        //    };
 
         public static DayViewModel GetDayInfo(this DateTime date) {
             var day = new DayViewModel {
@@ -93,8 +88,8 @@ namespace Datefa.Core.Extensions {
                 Month = (PersianMonth)_persianCalendar.GetMonth(date),
                 Year = _persianCalendar.GetYear(date),
                 DateValue = date,
-                MiladiDayNumber = date.Day,
-                MiladiMonth = date.Month,
+                GregorianDayNumber = date.Day,
+                GregorianMonth = date.Month,
                 HijriDayNumber = _hijriCalendar.GetDayOfMonth(date),
                 HijriMonth = _hijriCalendar.GetMonth(date)
             };
@@ -105,14 +100,14 @@ namespace Datefa.Core.Extensions {
         public static int GetWeekDayNumber(this DayOfWeek weekDay)
             => _weekDayNumbers[weekDay];
 
-        public static string GetWeekDayTitle(this DayOfWeek dayOfWeek)
+        public static string GetWeekDayName(this DayOfWeek dayOfWeek)
             => _weekDayNames[dayOfWeek];
 
         public static string GetPersianMonthDisplayName(this PersianMonth month)
             => _monthNames[month];
 
-        public static string GetMiladiMonthDisplayName(this MiladiMonth month)
-            => _miladiMonthNames[month];
+        public static string GetGregorianMonthDisplayName(this GregorianMonth month)
+            => _gregorianMonthNames[month];
 
         public static string GetHijriMonthDisplayName(this HijriMonth month)
             => _hijriMonthNames[month];
@@ -123,21 +118,17 @@ namespace Datefa.Core.Extensions {
         public static int GetHijriYear(this DateTime date)
             => _hijriCalendar.GetYear(date);
 
-        public static MiladiMonth GetMiladiMonth(this DateTime date)
-            => (MiladiMonth)date.Month;
+        public static PersianMonth GetPersianMonth(this DateTime date)
+            => (PersianMonth)_persianCalendar.GetMonth(date);
+
+        public static int GetPersianYear(this DateTime date)
+            => _persianCalendar.GetYear(date);
+
+        public static GregorianMonth GetGregorianMonth(this DateTime date)
+            => (GregorianMonth)date.Month;
 
         public static HijriMonth GetHijriMonth(this DateTime date)
             => (HijriMonth)_hijriCalendar.GetMonth(date);
-
-        //public static int Get1stMiladiMonth(int year, PersianMonth month) 
-        //    => 
-
-        //public static MiladiMonthInfo GetMiladiMonthInfo(this DateTime date) {
-        //    var result = new MiladiMonthInfo();
-        //    result.FirstDayDate = new DateTime(date.Year, date.Month, 1);
-            
-        //    return result;
-        //}
 
         public static DateTime GetFirstDayDateOfPersianMonth(
             this PersianMonth month, int year) 
@@ -189,6 +180,100 @@ namespace Datefa.Core.Extensions {
                 => month == PersianMonth.Esfand
                     ? currentYear + 1
                     : currentYear;
+
+        public static int GetGregorianMonthMaxDayNumber(this GregorianMonth month, int year) {
+            switch (month) {
+                case GregorianMonth.January:
+                    return 31;
+                case GregorianMonth.Feburuary:
+                    return DateTime.IsLeapYear(year) ? 29 : 28;
+                case GregorianMonth.March:
+                    return 31;
+                case GregorianMonth.April:
+                    return 30;
+                case GregorianMonth.May:
+                    return 31;
+                case GregorianMonth.June:
+                    return 30;
+                case GregorianMonth.July:
+                    return 30;
+                case GregorianMonth.August:
+                    return 31;
+                case GregorianMonth.September:
+                    return 30;
+                case GregorianMonth.October:
+                    return 31;
+                case GregorianMonth.November:
+                    return 30;
+                case GregorianMonth.December:
+                    return 31;
+                default:
+                    throw new NotSupportedException("Unknown Month!");
+            }
+        }
+
+        public static int GetHijriMonthMaxDayNumber(this HijriMonth month, int year) {
+            switch(month) {
+                case HijriMonth.Muharram:
+                case HijriMonth.RabialAwal:
+                case HijriMonth.JamadiAwal:
+                case HijriMonth.Rajab:
+                case HijriMonth.Ramadan:
+                case HijriMonth.DualQadah:
+                    return 30;
+                case HijriMonth.Safar:
+                case HijriMonth.RabialThani:
+                case HijriMonth.JamadiThani:
+                case HijriMonth.Shaban:
+                case HijriMonth.Shawal:
+                    return 29;
+                case HijriMonth.DualHijjah:
+                    return _hijriCalendar.IsLeapYear(year)
+                        ? 30 : 29;
+                default:
+                    throw new NotSupportedException("Invalid Month!");
+            }
+        }
+
+        public static string ToPersianDate(this DateTime date, string format = "YY:MM:DD") {
+            var day = _persianCalendar.GetDayOfMonth(date);
+            var month = _persianCalendar.GetMonth(date);
+            var year = _persianCalendar.GetYear(date);
+            var monthName = ((PersianMonth)month).GetPersianMonthDisplayName();
+            var dayName = GetWeekDayName(date.DayOfWeek);
+            var dayStr = day.ToString();
+            if (day < 10)
+                dayStr = $"0{day}";
+
+            format = format.ToUpper();
+            string result = format
+                .Replace("YY", year.ToString())
+                .Replace("MM", month.ToString())
+                .Replace("MMMM", monthName)
+                .Replace("DD", dayStr)
+                .Replace("DDDD", dayName);
+
+            return result;
+        }
+
+        public static string ToHijriDate(this DateTime date, string format = "YY:MM:DD") {
+            var day = _hijriCalendar.GetDayOfMonth(date);
+            var month = _hijriCalendar.GetMonth(date);
+            var year = _hijriCalendar.GetYear(date);
+            var monthName = ((HijriMonth)month).GetHijriMonthDisplayName();
+            var dayStr = day.ToString();
+            if (day < 10)
+                dayStr = $"0{day}";
+
+            format = format.ToUpper();
+            string result = format
+                .Replace("YY", year.ToString())
+                .Replace("MM", month.ToString())
+                .Replace("MMMM", monthName)
+                .Replace("DD", dayStr);
+
+            return result;
+        }
 
     }
 }

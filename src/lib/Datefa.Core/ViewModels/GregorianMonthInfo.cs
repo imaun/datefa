@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Datefa.Core.ViewModels
 {
-    public class MiladiMonthInfo {
+    public class GregorianMonthInfo {
         public int Year { get; set; }
-        public MiladiMonth Month { get; set; }
+        public GregorianMonth Month { get; set; }
         public DateTime FirstDayDate => new DateTime(Year, (int)Month, 1);
         public DayOfWeek FirstDayWeekDay => FirstDayDate.DayOfWeek;
     }

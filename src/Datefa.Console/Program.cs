@@ -10,7 +10,7 @@ namespace Datefa.Console
 
         static void Main(string[] args) {
             _calendar = new DatefaCalendar();
-            var thisMonth = _calendar.GetMonthViewData(1399, PersianMonth.Bahman);
+            var thisMonth = _calendar.GetMonthView(1399, PersianMonth.Bahman);
             System.Console.Read();
         }
     }

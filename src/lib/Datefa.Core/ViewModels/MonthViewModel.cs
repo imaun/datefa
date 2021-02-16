@@ -24,14 +24,17 @@ namespace Datefa.Core.ViewModels {
         public string Title { get; set; }
         public string DisplayName => Month
             .GetPersianMonthDisplayName();
-        public MiladiMonth MiladiMonth1 => FirstDayDate.GetMiladiMonth();
-        public string MiladiMonth1Title 
-            => MiladiMonth1.GetMiladiMonthDisplayName();
-        public int MiladiYear1 => FirstDayDate.Year;
-        public MiladiMonth MiladiMonth2 => LastDayDate.GetMiladiMonth();
-        public string MiladiMonth2Title
-            => MiladiMonth2.GetMiladiMonthDisplayName();
-        public int MiladiYear2 => LastDayDate.Year;
+        public GregorianMonth GregorianMonth1 => FirstDayDate.GetGregorianMonth();
+
+        public string GetGregorianMonth1Title() {
+            return GregorianMonth1.GetGregorianMonthDisplayName();
+        }
+
+        public int GregorianYear1 => FirstDayDate.Year;
+        public GregorianMonth GregorianMonth2 => LastDayDate.GetGregorianMonth();
+        public string GregorianMonth2Title
+            => GregorianMonth2.GetGregorianMonthDisplayName();
+        public int GregorianYear2 => LastDayDate.Year;
         public HijriMonth HijriMonth1 => FirstDayDate.GetHijriMonth();
         public string HijriMonth1Title
             => HijriMonth1.GetHijriMonthDisplayName();
@@ -45,6 +48,14 @@ namespace Datefa.Core.ViewModels {
         public DateTime FirstDayDate => Month.GetFirstDayDateOfPersianMonth(Year);
         public int LastDayNumber => Month.GetLastDayNumberOfPersianMonth(Year);
         public DateTime LastDayDate => Month.GetDate(Year, LastDayNumber);
+        public DayOfWeek FirstDayWeekDay => Month.GetFirstWeekDayOfPersianMonth(Year);
+        public int FirstDayWeekDayNumber => FirstDayWeekDay.GetWeekDayNumber();
+        public PersianMonth PreviousMonth => Month.GetPreviousPersianMonth();
+        public PersianMonth NextMonth => Month.GetNextPersianMonth();
+        public int PreviousMonthLastDayNumber => PreviousMonth.GetLastDayNumberOfPersianMonth(Year);
+        public int PreviousMonthStartDayNumber => (PreviousMonthLastDayNumber - FirstDayWeekDayNumber) + 2;
+        public int PreviousMonthYear => Month.GetPreviousPersianMonthYear(Year);
+        public int NextMonthYear => Month.GetNextPersianMonthYear(Year);
         #endregion
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Datefa.Core {
 
-    public enum MiladiMonth {
+    public enum GregorianMonth {
         January = 1,
         Feburuary = 2,
         March = 3,

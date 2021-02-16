@@ -20,8 +20,8 @@ namespace Datefa.Core.ViewModels
             Month = day.Month;
             Year = day.Year;
             DateValue = value;
-            MiladiDayNumber = day.MiladiDayNumber;
-            MiladiMonth = day.MiladiMonth;
+            GregorianDayNumber = day.GregorianDayNumber;
+            GregorianMonth = day.GregorianMonth;
             HijriDayNumber = day.HijriDayNumber;
             HijriMonth = day.HijriMonth;
         }
@@ -29,7 +29,7 @@ namespace Datefa.Core.ViewModels
         public string Title { get; set; }
         public int Number { get; set; }
         public DayOfWeek WeekDay { get; set; }
-        public string WeekDayTitle => WeekDay.GetWeekDayTitle();
+        public string WeekDayTitle => WeekDay.GetWeekDayName();
         public PersianMonth Month { get; set; }
         public string MonthDisplayName => Month.GetPersianMonthDisplayName();
         public int Year { get; set; }
@@ -42,8 +42,8 @@ namespace Datefa.Core.ViewModels
         /// If set true, means that this day does not belongs to current month
         /// </summary>
         public bool Disabled { get; set; } 
-        public int MiladiDayNumber { get; set; }
-        public int MiladiMonth { get; set; }
+        public int GregorianDayNumber { get; set; }
+        public int GregorianMonth { get; set; }
         public int HijriDayNumber { get; set; }
         public int HijriMonth { get; set; }
         public string Description { get; set; }
