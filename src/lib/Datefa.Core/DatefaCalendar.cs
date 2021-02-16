@@ -18,6 +18,9 @@ namespace Datefa.Core {
 
         public PersianMonth CurrentMonth => DateTime.Now.GetPersianMonth();
         public int CurrentYear => DateTime.Now.GetPersianYear();
+        public int CurrentDay => DateTime.Now.GetPersianDay();
+        public DayOfWeek CurrentDayOfWeek => DateTime.Now.DayOfWeek;
+        public string CurrentDayOfWeekName => CurrentDayOfWeek.GetWeekDayName();
 
         #endregion
 
@@ -31,7 +34,7 @@ namespace Datefa.Core {
 
             bool started = false, finished = false;
             for(int j = 0; j < 6; j++) {
-                int w = 0;
+                
                 for(int i = 6; i >= 0; i--) {
                     if(j == 0) { //means it's first week
                         if(i == 7 - monthView.FirstDayWeekDayNumber) {
@@ -67,10 +70,31 @@ namespace Datefa.Core {
                             dayNumber = 0;
                         }
                         dayNumber++;
-                        w++;
                     }
 
                 }
+            }
+
+            int idx = 0;
+            int w = 1;
+            int wOrder = 1;
+            WeekViewModel week = new WeekViewModel();
+            foreach(var day in monthView.Days) {
+                if(w == 1) {
+                    week = new WeekViewModel {
+                        Order = wOrder,
+                        StartDate = day.DateValue
+                    };
+                }
+                if(w == 7) {
+                    week.FinishDate = day.DateValue;
+                    monthView.Weeks.Add(week);
+                    w = 0;
+                    wOrder++;
+                }
+
+                week.Days.Add(day);
+                w++;
             }
 
             return monthView;

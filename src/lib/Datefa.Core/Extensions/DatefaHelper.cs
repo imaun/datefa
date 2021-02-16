@@ -124,6 +124,9 @@ namespace Datefa.Core.Extensions {
         public static int GetPersianYear(this DateTime date)
             => _persianCalendar.GetYear(date);
 
+        public static int GetPersianDay(this DateTime date)
+            => _persianCalendar.GetDayOfMonth(date);
+
         public static GregorianMonth GetGregorianMonth(this DateTime date)
             => (GregorianMonth)date.Month;
 

@@ -10,12 +10,14 @@ namespace Datefa.Core.ViewModels {
         public MonthViewModel(PersianMonth month) {
             Month = month;
             Days = new List<DayViewModel>();
+            Weeks = new List<WeekViewModel>();
         }
 
         public MonthViewModel(int year, PersianMonth month) {
             Year = year;
             Month = month;
             Days = new List<DayViewModel>();
+            Weeks = new List<WeekViewModel>();
         }
 
         #region Properties
@@ -56,6 +58,8 @@ namespace Datefa.Core.ViewModels {
         public int PreviousMonthStartDayNumber => (PreviousMonthLastDayNumber - FirstDayWeekDayNumber) + 2;
         public int PreviousMonthYear => Month.GetPreviousPersianMonthYear(Year);
         public int NextMonthYear => Month.GetNextPersianMonthYear(Year);
+        public ICollection<WeekViewModel> Weeks { get; set; }
+
         #endregion
     }
 }
