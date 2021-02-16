@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Datefa.Core.Extensions;
 
-namespace Datefa.Core.ViewModels
-{
+namespace Datefa.Core.ViewModels {
+
     public class DayViewModel {
 
         public static DayViewModel Init(DateTime date)
@@ -28,6 +26,7 @@ namespace Datefa.Core.ViewModels
 
         public string Title { get; set; }
         public int Number { get; set; }
+        public string NumberDisplay => Number.ToPersianNumbers();
         public DayOfWeek WeekDay { get; set; }
         public string WeekDayTitle => WeekDay.GetWeekDayName();
         public PersianMonth Month { get; set; }
@@ -43,8 +42,10 @@ namespace Datefa.Core.ViewModels
         /// </summary>
         public bool Disabled { get; set; } 
         public int GregorianDayNumber { get; set; }
+        public string GregorianDayNumberDisplay => GregorianDayNumber.ToEnglishNumbers();
         public int GregorianMonth { get; set; }
         public int HijriDayNumber { get; set; }
+        public string HijriDayNumberDisplay => HijriDayNumber.ToArabicNumbers();
         public int HijriMonth { get; set; }
         public string Description { get; set; }
     }

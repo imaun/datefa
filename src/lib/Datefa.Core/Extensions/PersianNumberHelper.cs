@@ -12,6 +12,16 @@ namespace Datefa.Core.Extensions {
                 ? number.ToString(format, CultureInfo.InvariantCulture)
                 : number.ToString(CultureInfo.InvariantCulture));
 
+        public static string ToArabicNumbers(this int number, string format = "")
+            => ToArabicNumbers(!string.IsNullOrEmpty(format)
+                ? number.ToString(format, CultureInfo.InvariantCulture)
+                : number.ToString(CultureInfo.InvariantCulture));
+
+        public static string ToEnglishNumbers(this int number, string format)
+            => ToEnglishNumbers(!string.IsNullOrEmpty(format)
+                ? number.ToString(format, CultureInfo.InvariantCulture)
+                : number.ToString(CultureInfo.InvariantCulture));
+
         /// <summary>
         /// Converts English digits of a given number to their equivalent Persian digits.
         /// </summary>
@@ -99,6 +109,76 @@ namespace Datefa.Core.Extensions {
                     case '9':
                     case '\u0669':
                         dataChars[i] = '\u06F9';
+                        break;
+
+                    default:
+                        dataChars[i] = dataChars[i];
+                        break;
+                }
+            }
+
+            return new string(dataChars);
+        }
+
+        /// <summary>
+        /// Converts Persian and English digits of a given string to their equivalent Arabic digits.
+        /// </summary>
+        /// <param name="data">English or Persian numbers</param>
+        /// <returns>Arabic Numbers</returns>
+        public static string ToArabicNumbers(this string data) {
+            if (string.IsNullOrWhiteSpace(data)) return string.Empty;
+
+            var dataChars = data.ToCharArray();
+            for (var i = 0; i < dataChars.Length; i++) {
+                switch (dataChars[i]) {
+                    case '0':
+                    case '\u06F0':
+                        dataChars[i] = '\u0660';
+                        break;
+
+                    case '1':
+                    case '\u06F1':
+                        dataChars[i] = '\u0661';
+                        break;
+
+                    case '2':
+                    case '\u06F2':
+                        dataChars[i] = '\u0662';
+                        break;
+
+                    case '3':
+                    case '\u06F3':
+                        dataChars[i] = '\u0663';
+                        break;
+
+                    case '4':
+                    case '\u06F4':
+                        dataChars[i] = '\u0664';
+                        break;
+
+                    case '5':
+                    case '\u06F5':
+                        dataChars[i] = '\u0665';
+                        break;
+
+                    case '6':
+                    case '\u06F6':
+                        dataChars[i] = '\u0666';
+                        break;
+
+                    case '7':
+                    case '\u06F7':
+                        dataChars[i] = '\u0667';
+                        break;
+
+                    case '8':
+                    case '\u06F8':
+                        dataChars[i] = '\u0668';
+                        break;
+
+                    case '9':
+                    case '\u06F9':
+                        dataChars[i] = '\u0669';
                         break;
 
                     default:

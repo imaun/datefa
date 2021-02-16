@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using Datefa.Core.Extensions;
 
 namespace Datefa.Core.ViewModels {
@@ -18,9 +17,11 @@ namespace Datefa.Core.ViewModels {
             Month = month;
             Days = new List<DayViewModel>();
             Weeks = new List<WeekViewModel>();
+            Today = DateTime.Now.GetDayInfo();
         }
 
         #region Properties
+        public DayViewModel Today { get; set; }
         public PersianMonth Month { get; set; }
         public int Year { get; set; }
         public string Title { get; set; }
