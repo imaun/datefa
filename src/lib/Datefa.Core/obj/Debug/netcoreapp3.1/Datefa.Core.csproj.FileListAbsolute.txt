@@ -1,0 +1,9 @@
+E:\Projects\Open-Source\datefa\src\lib\Datefa.Core\bin\Debug\netcoreapp3.1\Datefa.Core.deps.json
+E:\Projects\Open-Source\datefa\src\lib\Datefa.Core\bin\Debug\netcoreapp3.1\Datefa.Core.dll
+E:\Projects\Open-Source\datefa\src\lib\Datefa.Core\bin\Debug\netcoreapp3.1\Datefa.Core.pdb
+E:\Projects\Open-Source\datefa\src\lib\Datefa.Core\obj\Debug\netcoreapp3.1\Datefa.Core.csprojAssemblyReference.cache
+E:\Projects\Open-Source\datefa\src\lib\Datefa.Core\obj\Debug\netcoreapp3.1\Datefa.Core.AssemblyInfoInputs.cache
+E:\Projects\Open-Source\datefa\src\lib\Datefa.Core\obj\Debug\netcoreapp3.1\Datefa.Core.AssemblyInfo.cs
+E:\Projects\Open-Source\datefa\src\lib\Datefa.Core\obj\Debug\netcoreapp3.1\Datefa.Core.csproj.CoreCompileInputs.cache
+E:\Projects\Open-Source\datefa\src\lib\Datefa.Core\obj\Debug\netcoreapp3.1\Datefa.Core.dll
+E:\Projects\Open-Source\datefa\src\lib\Datefa.Core\obj\Debug\netcoreapp3.1\Datefa.Core.pdb

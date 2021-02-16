@@ -32,10 +32,16 @@ namespace Datefa.Core.ViewModels
         public string WeekDayTitle => WeekDay.GetWeekDayTitle();
         public PersianMonth Month { get; set; }
         public string MonthDisplayName => Month.GetPersianMonthDisplayName();
-        public int? Year { get; set; }
+        public int Year { get; set; }
         public DateTime DateValue { get; set; }
+        /// <summary>
+        /// If true, means It's holiday
+        /// </summary>
         public bool Holiday { get; set; }
-        public bool Enabled { get; set; } = true;
+        /// <summary>
+        /// If set true, means that this day does not belongs to current month
+        /// </summary>
+        public bool Disabled { get; set; } 
         public int MiladiDayNumber { get; set; }
         public int MiladiMonth { get; set; }
         public int HijriDayNumber { get; set; }

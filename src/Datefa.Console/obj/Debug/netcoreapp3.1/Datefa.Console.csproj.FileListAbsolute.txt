@@ -1,0 +1,16 @@
+E:\Projects\Open-Source\datefa\src\Datefa.Console\obj\Debug\netcoreapp3.1\Datefa.Console.csprojAssemblyReference.cache
+E:\Projects\Open-Source\datefa\src\Datefa.Console\obj\Debug\netcoreapp3.1\Datefa.Console.AssemblyInfoInputs.cache
+E:\Projects\Open-Source\datefa\src\Datefa.Console\obj\Debug\netcoreapp3.1\Datefa.Console.AssemblyInfo.cs
+E:\Projects\Open-Source\datefa\src\Datefa.Console\obj\Debug\netcoreapp3.1\Datefa.Console.csproj.CoreCompileInputs.cache
+E:\Projects\Open-Source\datefa\src\Datefa.Console\bin\Debug\netcoreapp3.1\Datefa.Console.exe
+E:\Projects\Open-Source\datefa\src\Datefa.Console\bin\Debug\netcoreapp3.1\Datefa.Console.deps.json
+E:\Projects\Open-Source\datefa\src\Datefa.Console\bin\Debug\netcoreapp3.1\Datefa.Console.runtimeconfig.json
+E:\Projects\Open-Source\datefa\src\Datefa.Console\bin\Debug\netcoreapp3.1\Datefa.Console.runtimeconfig.dev.json
+E:\Projects\Open-Source\datefa\src\Datefa.Console\bin\Debug\netcoreapp3.1\Datefa.Console.dll
+E:\Projects\Open-Source\datefa\src\Datefa.Console\bin\Debug\netcoreapp3.1\Datefa.Console.pdb
+E:\Projects\Open-Source\datefa\src\Datefa.Console\bin\Debug\netcoreapp3.1\Datefa.Core.dll
+E:\Projects\Open-Source\datefa\src\Datefa.Console\bin\Debug\netcoreapp3.1\Datefa.Core.pdb
+E:\Projects\Open-Source\datefa\src\Datefa.Console\obj\Debug\netcoreapp3.1\Datefa.Console.csproj.CopyComplete
+E:\Projects\Open-Source\datefa\src\Datefa.Console\obj\Debug\netcoreapp3.1\Datefa.Console.dll
+E:\Projects\Open-Source\datefa\src\Datefa.Console\obj\Debug\netcoreapp3.1\Datefa.Console.pdb
+E:\Projects\Open-Source\datefa\src\Datefa.Console\obj\Debug\netcoreapp3.1\Datefa.Console.genruntimeconfig.cache

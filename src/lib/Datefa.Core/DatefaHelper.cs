@@ -7,11 +7,9 @@ namespace Datefa.Core.Extensions {
 
     public static class DatefaHelper {
 
-        private static PersianCalendar _persianCalendar
-            = new PersianCalendar();
+        private static PersianCalendar _persianCalendar = new PersianCalendar();
 
-        private static HijriCalendar _hijriCalendar
-            = new HijriCalendar();
+        private static HijriCalendar _hijriCalendar = new HijriCalendar();
 
         private static Dictionary<DayOfWeek, int> _weekDayNumbers 
             = new Dictionary<DayOfWeek, int>() {
@@ -67,6 +65,21 @@ namespace Datefa.Core.Extensions {
                 { MiladiMonth.September, "September" }
             };
 
+        private static Dictionary<HijriMonth, string> _hijriMonthNames
+            = new Dictionary<HijriMonth, string> {
+                { HijriMonth.Muharram, "محرم‎" },
+                { HijriMonth.Safar, "صفر" },
+                { HijriMonth.RabialAwal, "ربیع الاول" },
+                { HijriMonth.RabialThani, "ربیع الثانی" },
+                { HijriMonth.JamadiAwal, "جمادی الاولی" },
+                { HijriMonth.JamadiThani, "جمادی الثانیه" },
+                { HijriMonth.Rajab, "رجب" },
+                { HijriMonth.Shaban, "شعبان" },
+                { HijriMonth.Ramadan, "رمضان" },
+                { HijriMonth.Shawal, "شوال" },
+                { HijriMonth.DualQadah, "ذوالقعده" },
+                { HijriMonth.DualHijjah, "ذوالحجه" }
+            };
         
         //private static Dictionary<PersianMonth, MiladiMonth> _1stMonths
         //    = new Dictionary<PersianMonth, MiladiMonth>() {
@@ -100,6 +113,21 @@ namespace Datefa.Core.Extensions {
 
         public static string GetMiladiMonthDisplayName(this MiladiMonth month)
             => _miladiMonthNames[month];
+
+        public static string GetHijriMonthDisplayName(this HijriMonth month)
+            => _hijriMonthNames[month];
+
+        public static DateTime GetDate(this PersianMonth month, int year, int day)
+            => _persianCalendar.ToDateTime(year, (int)month, day, 0, 0, 0, 0);
+
+        public static int GetHijriYear(this DateTime date)
+            => _hijriCalendar.GetYear(date);
+
+        public static MiladiMonth GetMiladiMonth(this DateTime date)
+            => (MiladiMonth)date.Month;
+
+        public static HijriMonth GetHijriMonth(this DateTime date)
+            => (HijriMonth)_hijriCalendar.GetMonth(date);
 
         //public static int Get1stMiladiMonth(int year, PersianMonth month) 
         //    => 
