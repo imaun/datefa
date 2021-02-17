@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "web", "web", "{12D711DC-83A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datefa.Web.Components", "src\web\Datefa.Web.Components\Datefa.Web.Components.csproj", "{B8BE6188-0B98-4A3F-B235-EA55B0DEDBFA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datefa.Data", "src\lib\Datefa.Data\Datefa.Data.csproj", "{0FCF81D2-C02F-4AB5-81F3-BA9C2CEA5DFB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{B8BE6188-0B98-4A3F-B235-EA55B0DEDBFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8BE6188-0B98-4A3F-B235-EA55B0DEDBFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8BE6188-0B98-4A3F-B235-EA55B0DEDBFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FCF81D2-C02F-4AB5-81F3-BA9C2CEA5DFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FCF81D2-C02F-4AB5-81F3-BA9C2CEA5DFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FCF81D2-C02F-4AB5-81F3-BA9C2CEA5DFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FCF81D2-C02F-4AB5-81F3-BA9C2CEA5DFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,6 +49,7 @@ Global
 		{FFD70EFA-827E-49FA-A38B-B438947C3507} = {4D611245-D2D1-42E2-9B5A-8DA4090FC6C5}
 		{12D711DC-83AF-4F89-877D-ECAB48644E18} = {4D611245-D2D1-42E2-9B5A-8DA4090FC6C5}
 		{B8BE6188-0B98-4A3F-B235-EA55B0DEDBFA} = {12D711DC-83AF-4F89-877D-ECAB48644E18}
+		{0FCF81D2-C02F-4AB5-81F3-BA9C2CEA5DFB} = {8532971F-02FE-49EE-BC87-B051B221E2CD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CC7EEFD8-5096-400C-8F4C-516CDBFE5739}
