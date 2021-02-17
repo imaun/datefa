@@ -38,6 +38,9 @@ namespace Datefa.Core.ViewModels {
         /// If true, means It's holiday
         /// </summary>
         public bool Holiday { get; set; }
+
+        public bool IsFriday => WeekDay == DayOfWeek.Friday;
+
         /// <summary>
         /// If set true, means that this day does not belongs to current month
         /// </summary>

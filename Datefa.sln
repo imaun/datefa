@@ -5,11 +5,15 @@ VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4D611245-D2D1-42E2-9B5A-8DA4090FC6C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datefa.Core", "src\lib\Datefa.Core\Datefa.Core.csproj", "{75A47482-C041-438C-8FEE-09DEEDD4EC20}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Datefa.Core", "src\lib\Datefa.Core\Datefa.Core.csproj", "{75A47482-C041-438C-8FEE-09DEEDD4EC20}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{8532971F-02FE-49EE-BC87-B051B221E2CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datefa.Console", "src\Datefa.Console\Datefa.Console.csproj", "{FFD70EFA-827E-49FA-A38B-B438947C3507}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Datefa.Console", "src\Datefa.Console\Datefa.Console.csproj", "{FFD70EFA-827E-49FA-A38B-B438947C3507}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "web", "web", "{12D711DC-83AF-4F89-877D-ECAB48644E18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datefa.Web.Components", "src\web\Datefa.Web.Components\Datefa.Web.Components.csproj", "{B8BE6188-0B98-4A3F-B235-EA55B0DEDBFA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +29,10 @@ Global
 		{FFD70EFA-827E-49FA-A38B-B438947C3507}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFD70EFA-827E-49FA-A38B-B438947C3507}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFD70EFA-827E-49FA-A38B-B438947C3507}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8BE6188-0B98-4A3F-B235-EA55B0DEDBFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8BE6188-0B98-4A3F-B235-EA55B0DEDBFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8BE6188-0B98-4A3F-B235-EA55B0DEDBFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8BE6188-0B98-4A3F-B235-EA55B0DEDBFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -33,6 +41,8 @@ Global
 		{75A47482-C041-438C-8FEE-09DEEDD4EC20} = {8532971F-02FE-49EE-BC87-B051B221E2CD}
 		{8532971F-02FE-49EE-BC87-B051B221E2CD} = {4D611245-D2D1-42E2-9B5A-8DA4090FC6C5}
 		{FFD70EFA-827E-49FA-A38B-B438947C3507} = {4D611245-D2D1-42E2-9B5A-8DA4090FC6C5}
+		{12D711DC-83AF-4F89-877D-ECAB48644E18} = {4D611245-D2D1-42E2-9B5A-8DA4090FC6C5}
+		{B8BE6188-0B98-4A3F-B235-EA55B0DEDBFA} = {12D711DC-83AF-4F89-877D-ECAB48644E18}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CC7EEFD8-5096-400C-8F4C-516CDBFE5739}

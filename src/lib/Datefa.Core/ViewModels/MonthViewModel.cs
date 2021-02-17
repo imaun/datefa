@@ -23,6 +23,7 @@ namespace Datefa.Core.ViewModels {
         #region Properties
         public DayViewModel Today { get; set; }
         public PersianMonth Month { get; set; }
+        public string MonthDisplayName => Month.GetPersianMonthDisplayName();
         public int Year { get; set; }
         public string Title { get; set; }
         public string DisplayName => Month
