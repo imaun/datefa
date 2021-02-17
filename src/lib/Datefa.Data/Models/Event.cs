@@ -14,7 +14,7 @@ namespace Datefa.Data.Models {
         public string Title { get; set; }
         public string Description { get; set; }
         public string ImagePath { get; set; }
-        public int IconIndex { get; set; }
+        public int? IconIndex { get; set; }
         public int DayNumber { get; set; }
         public int? MonthNumber { get; set; }
         public int? Year { get; set; }
